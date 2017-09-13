@@ -1,0 +1,52 @@
+// ==========================================================================
+// filter used in lobby
+// ==========================================================================
+$filters-height: 44px !default;
+.filters {
+    @include clearfix();
+    height: $filters-height;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    &-block {
+        float: left;
+        border-right: 1px solid #ccc;
+        position: relative;
+        height: 100%;
+        background-color: #fff;
+    }
+    &-block-group {
+        height: $filters-height;
+        margin-right: 44px;
+        @media (min-width: $screen-sm-min) {
+        	margin-left: 110px;
+        }
+        .filters-block {
+            width: 33.33%;
+        }
+    }
+}
+
+.filters-reset-btn {
+    @include square($filters-height);
+    display: inline-block;
+    font-size: 22px;
+    color: #333;
+    padding: ($filters-height - 22) / 2;
+    line-height: 1;
+    float: right;
+    background-color: #fff;
+    &:hover {
+        background: linear-gradient(180deg, #FFFFFF 0%, #F4F4F4 100%);
+    }
+}
+
+.filters-head {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F4F4F4 100%);
+    width: 110px;
+    height: $filters-height;
+    line-height: $filters-height;
+    text-align: center;
+    @media (max-width: $screen-xs-max) {
+        display: none;
+    }
+}

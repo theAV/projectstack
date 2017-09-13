@@ -1,0 +1,26 @@
+<form class="row" style="margin-top: 50px;">
+    <div class="col-sm-6 form-group">
+        <label>First Name</label>
+        <input type="text" class="form-control" ng-model="$ctrl.userObj.firstname">
+    </div>
+    <div class="col-sm-6 form-group">
+        <label>Last Name</label>
+        <input type="text" class="form-control" ng-model="$ctrl.userObj.lastname">
+    </div>
+    <div class="col-sm-6 form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" ng-model="$ctrl.userObj.email">
+    </div>
+    <div class="col-sm-6 form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" ng-model="$ctrl.userObj.password">
+    </div>
+    <div class="col-sm-6 form-group">
+        <label>Mobile</label>
+        <input type="text" class="form-control" ng-model="$ctrl.userObj.mobile">
+    </div>
+    <div class="col-sm-12 form-group">
+        <button type="button" class="btn btn-primary" ng-click="$ctrl.submit();">Submit</button>
+        &nbsp;All ready a member? <a ui-sref="login">Login</a>
+    </div>
+</form>

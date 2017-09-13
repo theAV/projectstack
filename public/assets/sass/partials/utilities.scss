@@ -1,0 +1,580 @@
+//
+// Utility classes
+// --------------------------------------------------
+// Floats
+// -------------------------
+.clearfix {
+    @include clearfix;
+}
+
+.center-block {
+    @include center-block;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+    padding-left: 10px;
+}
+
+.pull-right {
+    float: right !important;
+    +.overflow-hidden {
+        padding-right: 10px;
+    }
+}
+
+.pull-left {
+    float: left !important;
+}
+
+
+// Toggling content
+// -------------------------
+// Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.text-hide {
+    @include text-hide;
+}
+
+
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+.hidden {
+    display: none !important;
+}
+
+
+// For Affix plugin
+// -------------------------
+.affix {
+    position: fixed;
+}
+
+
+.thankyou-msg {
+    font-size: 22px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @media (min-width: $screen-sm-min) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    >img {
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+}
+
+.uib-daypicker {
+    color: #333;
+}
+
+.full-screen {
+    &-view {
+        @include square(100%);
+        display: table;
+    }
+    &-row {
+        display: table-row;
+        height: 100%;
+        &:first-child {
+            height: $navbar-height;
+        }
+        &:last-child {
+            .full-screen-cell {
+                vertical-align: bottom;
+            }
+        }
+    }
+    &-cell {
+        display: table-cell;
+    }
+}
+
+.main-view {
+    padding-top: 15px;
+    @media (min-width: $screen-sm-min) {
+        padding-top: 30px;
+    }
+}
+
+.refer-friend-bar {
+    background: url("../img/refer-friends-banner.png") no-repeat left top;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .5);
+    border-radius: $border-radius-base;
+    margin-bottom: 15px;
+    position: relative;
+    display: block;
+    min-height: 76px;
+    padding: 15px;
+    background-size: cover;
+    color: #FFFFFF;
+    @include medium();
+    font-size: 22px;
+    .text {
+        display: block;
+        line-height: 1;
+        margin-top: 10px;
+    }
+    .btn-refer {
+        position: absolute;
+        right: 25px;
+        top: (61px - 30px);
+    }
+    @media (min-width: $screen-sm-min) {
+        padding-left: 115px;
+        padding-right: 160px;
+        .text {
+            margin-top: (46px - 22px) / 2;
+        }
+        .friends-pic {
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+        }
+        .btn-refer {
+            top: (76px - 30px) / 2;
+        }
+    }
+    @media (min-width: $screen-md-min) {
+        padding-left: 160px;
+        .friends-pic {
+            left: 50px;
+        }
+    }
+}
+
+.user-top-details {
+    h2,
+    .h2,
+    h4,
+    .h4 {
+        margin-bottom: 0;
+        font-size: 14px;
+        @include regular();
+    }
+    h2,
+    .h2 {
+        margin-top: 0;
+    }
+    h4,
+    .h4 {
+        margin-top: 2px;
+        color: $brand-secondary;
+    }
+    .user-detail {
+        @media (min-width: $screen-sm-min) {
+            text-align: right;
+            padding-right: 5px;
+        }
+    }
+    .user-detail,
+    .avatar-thumb {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.club-wise-detail {
+    h3 {
+        font-style: 22px;
+        margin: 2px 0 0;
+    }
+}
+
+.advertisement-container {
+    text-align: center;
+    margin: 15px auto;
+    @media (min-width: $screen-sm-min) {
+        min-height: 90px;
+        margin: 20px auto;
+    }
+}
+
+
+
+.tip-detail-block {
+    margin: 0;
+    padding: ((64px - 44px) / 2) 0;
+    list-style: none;
+    .icn {
+        font-size: 30px;
+    }
+    h4,
+    .h4 {
+        font-size: 22px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    @include clearfix;
+    @media (max-width: $screen-xs-max) {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    >li {
+        @media (min-width: $screen-sm-min) {
+            display: table-cell;
+            width: 1%;
+            vertical-align: middle;
+            text-transform: capitalize;
+        }
+        @media(max-width: $screen-xs-max) {
+            float: left;
+            padding: 10px 0;
+            width: 100%;
+        }
+    }
+    .contents {
+        font-size: 14px;
+        color: inherit;
+    }
+    .timer {
+        .contents {
+            color: #FF4450;
+        }
+        .countdown_row {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    &.dateformate {
+        >li {
+            vertical-align: top;
+        }
+        .timer {
+            .contents {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+    .digital7 {
+        font-size: 24px;
+    }
+}
+
+.notification-list {
+    .notification-type-icn {
+        padding: 0 5px;
+        font-size: 32px;
+        float: left;
+        color: #9B9B9B;
+        width: 50px;
+        text-align: center;
+    }
+    .overflow-hidden {
+        @media (max-width: $screen-xs-max) {
+            width: 100%;
+        }
+    }
+}
+
+.profile-img {
+    @include center-block();
+    @include square(160px);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 100%;
+    background-color: #f3f3f3;
+    border: 4px solid #fff;
+    margin-bottom: 20px;
+    @media (min-width: $screen-sm-min) {
+        margin-bottom: 30px;
+        margin-top: -35px;
+    }
+    img {
+        @include square(100%);
+        border-radius: 100%;
+    }
+}
+
+.username {
+    font-size: 24px;
+    margin-bottom: 25px;
+    h3 {
+        margin-top: 0;
+        margin-bottom: 2px;
+    }
+}
+
+.club-status-text {
+    color: #9C9C9C;
+    font-size: 14px;
+    display: block;
+}
+
+.profile-view {
+    .list-group-item {
+        border-radius: 0;
+        border-left: none;
+        border-top: none;
+        border-right: none;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+}
+
+
+.trans-mini-detail {
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+    background-color: #13143E;
+    color: #fff;
+    border-radius: 3px;
+    padding: 15px;
+    margin-bottom: 25px;
+    .profile-img {
+        float: left;
+        margin: 0;
+        @include square(80px);
+    }
+    .userLog {
+        overflow: hidden;
+        @media (min-width: $screen-sm-min) {
+            padding-left: 15px;
+        }
+    }
+    @media (min-width: $screen-lg-min) {
+        height: 125px;
+        .profile-img {
+            @include square(140px);
+            margin: (-(140px - 95px) / 2) 0 0 15px;
+        }
+        .userLog {
+            margin-top: (95px - 75px) / 2;
+        }
+    }
+}
+
+.userLog {
+    h2 {
+        font-size: 22px;
+        margin: 0 0 5px;
+    }
+    .name {
+        margin-bottom: 5px;
+    }
+}
+
+.userLog-tbl {
+    padding: 0;
+    margin: ((75px - 54px) / 2) 0 0;
+    list-style: none;
+    @media (min-width: $screen-sm-min) {
+        height: 54px;
+        &.justified {
+            display: table;
+            >li {
+                display: table-cell;
+                width: 1%;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+    >li {
+        display: inline-block;
+        padding-left: 15px;
+        padding-right: 15px;
+        vertical-align: middle;
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+        position: relative;
+        height: 100%;
+    }
+    @media (max-width: $screen-xs-max) {
+        >li {
+            float: left;
+            width: 50%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            h4 {
+                margin-bottom: 0;
+            }
+            &:last-child {
+                width: 100%;
+            }
+            &:nth-child(odd) {
+                border-left: none;
+            }
+        }
+    }
+}
+
+
+@media (min-width: $screen-lg-min) {
+    .trans-mini-detail {
+        .left-part {
+            float: left;
+        }
+        .userLog-tbl {
+            float: right;
+        }
+    }
+}
+
+.category-detail {
+    @include gradient-vertical(#FFFFFF,
+    #E2E2E2);
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    @include clearfix;
+    h5 {
+        font-size: 16px;
+        color: #333333;
+        margin: 0 0 15px;
+    }
+    .small-heading {
+        color: #9C9C9C;
+    }
+    .userLog-tbl {
+        &.justified {
+            margin-left: auto;
+            margin-right: auto;
+            @media (min-width: $screen-lg-min) {
+                width: 90%;
+            }
+        }
+        >li {
+            border-color: #d4d4d4;
+            text-align: right;
+            color: #818181;
+            padding: 10px 5px;
+            &:first-child {
+                border-left: none;
+            }
+            @media (max-width: $screen-xs-max) {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.performance-block {
+    .player-img-block {
+        h1,
+        h4,
+        img {
+            float: left;
+        }
+        h1,
+        h4 {
+            padding-left: 15px;
+        }
+        h1 {
+            margin-top: 50px;
+            @media (max-width: $screen-md-max) {
+                margin-top: 0;
+            }
+        }
+    }
+    h1 {
+        font-size: 32px;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        @media (max-width: $screen-lg-max) {
+            font-size: 23px;
+        }
+    }
+    h4 {
+        margin: 10px 0 0;
+        @media (max-width: $screen-lg-max) {
+            font-size: 15px;
+        }
+    }
+}
+
+.selected-player-blocks {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+    @include clearfix;
+    >li {
+        width: 33.33%;
+        float: left;
+        padding: 0 10px;
+    }
+    .innerblock {
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+        height: 80px;
+        background-color: #fff;
+        border-radius: 3px;
+        position: relative;
+        padding: 10px;
+        color: #333;
+        .select-captain {
+            @include square(22px);
+            bottom: 0;
+            right: 0;
+            text-align: center;
+            line-height: 22px;
+            color: #B9B9B9;
+            background-color: #D8D8D8;
+            position: absolute;
+            &.selected {
+                background-color: $brand-secondary;
+                color: #fff;
+            }
+        }
+        .list-inline {
+            margin-bottom: 0;
+            font-size: 12px;
+        }
+        &.pick {
+            border: 1px solid #444683;
+            background-color: #13143E;
+            color: #71728B;
+            padding: 0;
+            text-align: center;
+            @include regular;
+            h1 {
+                font-size: 22px;
+                line-height: 80px;
+                margin: 0;
+            }
+        }
+    }
+}
+.section1{
+    background: url('../img/bg.jpg') no-repeat center center;
+    background-size: cover;
+}
+.layer{
+    left:50% !important;
+    top: 100px !important;
+    // transform: scale(3);
+    // @include transition(transform 0.8s cubic-bezier(0.46, 0.03, 0.52, 0.96));
+}
+@include keyframes(zoomout) {
+  from  {
+    @include scale(5);
+    opacity: 0;
+  }
+  to {
+    @include scale(1);
+    opacity: 1;
+  } 
+}
+.layer-zoomout{
+    // transform: scale(1);
+    @include animation(zoomout 0.8s);
+}
+#scene{
+    height: 100%;
+    width: 100%;
+}
